@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="per.android.study.login" >
+    <application>
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="per.android.study.login.open"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailActivity"/>
+    </application>
+</manifest>

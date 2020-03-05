@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    >
 
     <Button
-        android:id="@+id/btn_go_login"
+        android:id="@+id/btn_dashboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="go to login"
+        android:text="go to dashboard"
         android:textSize="24dp"
         />
 

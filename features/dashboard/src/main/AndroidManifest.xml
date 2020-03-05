@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="per.android.study.dashboard" >
+
+    <application>
+        <activity android:name=".DashboardActivity">
+            <intent-filter>
+                <action android:name="per.android.study.dashboard.open"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
