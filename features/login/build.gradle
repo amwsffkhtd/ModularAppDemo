@@ -1,4 +1,8 @@
-apply plugin: 'com.android.library'
+if (useModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 android {
     compileSdkVersion 29
@@ -6,6 +10,9 @@ android {
 
 
     defaultConfig {
+        if (useModule.toBoolean()) {
+            applicationId "per.android.study.login"
+        }
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -13,6 +20,20 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+    }
+
+    sourceSets {
+        main {
+            if (useModule.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //集成开发模式去除debug包中的java文件, 直接使用java路径中的java文件
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
     }
 
     buildTypes {
