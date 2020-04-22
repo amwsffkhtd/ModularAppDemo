@@ -20,6 +20,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
     }
 
     sourceSets {
@@ -53,6 +59,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation project(':libraries:actions')
-    implementation project(':libraries:uicomponent')
+    api project(':libraries:actions')
+    api project(':libraries:uicomponent')
+    api project(':libraries:routerlib')
+
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 }

@@ -1,1 +1,2 @@
 include ':app', ':news_feature', ':libraries:actions', ':features:login', ':libraries:uicomponent', ':features:dashboard'
+include ':libraries:routerlib'

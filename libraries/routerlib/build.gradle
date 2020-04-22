@@ -1,24 +1,17 @@
-if (useModule.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
-}
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
-
     defaultConfig {
-        if (useModule.toBoolean()) {
-            applicationId "per.android.study.dashboard"
-        }
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -27,19 +20,6 @@ android {
         }
     }
 
-    sourceSets {
-        main {
-            if (useModule.toBoolean()) {
-                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-                //集成开发模式去除debug包中的java文件, 直接使用java路径中的java文件
-                java {
-                    exclude 'debug/**'
-                }
-            }
-        }
-    }
     buildTypes {
         release {
             minifyEnabled false
@@ -54,12 +34,9 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    api project(':libraries:actions')
-    api project(':libraries:uicomponent')
-    api project(':libraries:routerlib')
-
+    compile 'com.alibaba:arouter-api:1.5.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 }

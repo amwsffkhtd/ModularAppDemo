@@ -3,10 +3,6 @@
 
     <application>
         <activity android:name=".DashboardActivity">
-            <intent-filter>
-                <action android:name="per.android.study.dashboard.open"/>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
     </application>
 </manifest>

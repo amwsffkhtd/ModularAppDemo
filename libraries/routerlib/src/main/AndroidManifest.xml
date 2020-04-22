@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="per.android.study.routerlib" >
+<!--  we can put the application class in a library's Mainifest file,
+       it's weird but works.-->
+<application
+    android:name=".App"
+    >
+
+</application>
+</manifest>
