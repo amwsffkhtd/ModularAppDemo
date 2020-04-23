@@ -1,9 +1,10 @@
-package per.android.study.routerlib;
+package per.android.study.modularapp;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+
+import per.android.study.routerlib.BuildConfig;
 
 public class App extends Application {
 

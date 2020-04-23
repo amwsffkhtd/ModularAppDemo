@@ -3,6 +3,7 @@
     package="per.android.study.login">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:label="Main Login"
         android:supportsRtl="true"
@@ -14,6 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"/>
+        <activity
+            android:name=".DetailActivity"/>
     </application>
 
 </manifest>

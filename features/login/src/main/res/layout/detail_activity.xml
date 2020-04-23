@@ -7,6 +7,14 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="Login Detail Activity"
+        android:textSize="25dp"
+        android:gravity="center"
+        />
+
     <Button
         android:id="@+id/btn_dashboard"
         android:layout_width="match_parent"
